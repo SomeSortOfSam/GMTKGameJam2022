@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://btmx2ae08sul7"
+path="res://.godot/imported/Dice.obj-b222bbcad966d864bd1f2c86de8ba858.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Dice.obj-b222bbcad966d864bd1f2c86de8ba858.mesh"]
+
+source_file="res://Dice.obj"
+dest_files=["res://.godot/imported/Dice.obj-b222bbcad966d864bd1f2c86de8ba858.mesh", "res://.godot/imported/Dice.obj-b222bbcad966d864bd1f2c86de8ba858.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
