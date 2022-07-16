@@ -34,7 +34,7 @@ func prepare_current_side(direction: Vector2) -> Node3D:
 		connect("rotation_finished",side.on_cube_rotation_finished)
 		add_child(side)
 		side.global_rotation = Vector3.ZERO
-		side.global_position = Vector3.ZERO
+		side.global_position = Vector3.DOWN * .09
 	return side
 	
 

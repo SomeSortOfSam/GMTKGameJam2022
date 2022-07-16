@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=3 uid="uid://e3t7iglp0ytt"]
+
+[ext_resource type="Script" path="res://Sides/Grassland/Grassland.gd" id="1_vfijv"]
+[ext_resource type="Texture2D" uid="uid://v5f3vkvybjb5" path="res://Sides/Grassland/Grass1.png" id="2_30203"]
+
+[sub_resource type="Gradient" id="Gradient_80a7o"]
+colors = PackedColorArray(0, 1, 0.160784, 1, 0.407843, 1, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_7kh1i"]
+metadata/_preview_in_3d_space_ = true
+
+[sub_resource type="NoiseTexture" id="NoiseTexture_x8h0d"]
+as_normal_map = true
+bump_strength = 0.9
+color_ramp = SubResource("Gradient_80a7o")
+noise = SubResource("FastNoiseLite_7kh1i")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7dl8b"]
+albedo_color = Color(0, 0.847059, 0, 1)
+albedo_texture = SubResource("NoiseTexture_x8h0d")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_raaqn"]
+material = SubResource("StandardMaterial3D_7dl8b")
+size = Vector2(1.8, 1.8)
+
+[node name="Grassland" type="Node3D"]
+script = ExtResource("1_vfijv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_raaqn")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1.78601, 0, 0.623375, 0, 1, 0, -1.42386, 0, 0.781923, -0.305365, 0.160007, 0)
+modulate = Color(0, 0.572549, 0, 1)
+billboard = 2
+texture = ExtResource("2_30203")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(1.78601, 0, 0.623375, 0, 1, 0, -1.42386, 0, 0.781923, -0.126185, 0.160007, -0.516024)
+modulate = Color(0, 0.572549, 0, 1)
+billboard = 2
+texture = ExtResource("2_30203")
+
+[node name="Sprite3D3" type="Sprite3D" parent="."]
+transform = Transform3D(1.78601, 0, 0.623375, 0, 1, 0, -1.42386, 0, 0.781923, -0.52378, 0.160007, 0.518808)
+modulate = Color(0, 0.572549, 0, 1)
+billboard = 2
+texture = ExtResource("2_30203")
+
+[node name="Sprite3D4" type="Sprite3D" parent="."]
+transform = Transform3D(2.13678, 0, -0.353344, 0, 1, 0, 0.807081, 0, 0.935493, 0.470546, 0.160007, 0.518808)
+modulate = Color(0, 0.572549, 0, 1)
+billboard = 2
+texture = ExtResource("2_30203")
+
+[node name="Sprite3D5" type="Sprite3D" parent="."]
+transform = Transform3D(2.13678, 0, -0.353344, 0, 1, 0, 0.807081, 0, 0.935493, 0.470546, 0.160007, 0.00953978)
+modulate = Color(0, 0.572549, 0, 1)
+billboard = 2
+texture = ExtResource("2_30203")
+
+[node name="Sprite3D6" type="Sprite3D" parent="."]
+transform = Transform3D(2.13678, 0, -0.353344, 0, 1, 0, 0.807081, 0, 0.935493, 0.470546, 0.160007, -0.474003)
+modulate = Color(0, 0.572549, 0, 1)
+billboard = 2
+texture = ExtResource("2_30203")

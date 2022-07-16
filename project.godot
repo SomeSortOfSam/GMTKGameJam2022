@@ -8,6 +8,16 @@
 
 config_version=5
 
+_global_script_classes=[{
+"base": "Node3D",
+"class": &"DiceSide",
+"language": &"GDScript",
+"path": "res://Sides/DiceSide.gd"
+}]
+_global_script_class_icons={
+"DiceSide": ""
+}
+
 [application]
 
 config/name="GMTK Game Jam 2022"
