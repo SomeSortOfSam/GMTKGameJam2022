@@ -1,8 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6xr5xq466rqm"]
+[gd_scene load_steps=5 format=3 uid="uid://b6xr5xq466rqm"]
 
-[ext_resource type="Texture2D" uid="uid://csyjphfvmwr3j" path="res://icon.png" id="1_a3kfa"]
+[ext_resource type="Script" path="res://Sides/TestSide.gd" id="1_5um5p"]
+[ext_resource type="Material" uid="uid://dp1unb5xgjfhp" path="res://DiceMaterial.tres" id="2_tork5"]
 
-[node name="Node3D" type="Node3D"]
+[sub_resource type="BoxMesh" id="BoxMesh_eqbqk"]
+material = ExtResource("2_tork5")
+size = Vector3(0.1, 0.1, 0.1)
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
-texture = ExtResource("1_a3kfa")
+[sub_resource type="PlaneMesh" id="PlaneMesh_jbbir"]
+size = Vector2(1.8, 1.8)
+
+[node name="Side" type="Node3D"]
+script = ExtResource("1_5um5p")
+
+[node name="Sprite3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_eqbqk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+mesh = SubResource("PlaneMesh_jbbir")
+
+[node name="DeathTimer" type="Timer" parent="."]
+wait_time = 0.2
+
+[connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]

@@ -14,3 +14,6 @@ current = true
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="."]
 remote_path = NodePath("../Cube/Player")
 update_rotation = false
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.5, 4.47035e-08, -0.866025, 0.612372, 0.707107, 0.353553, 0.612372, -0.707107, 0.353553, 0, 0, 0)
