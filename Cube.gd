@@ -8,6 +8,7 @@ extends Node3D
 const NORMALS_TO_NUMBERS := {Vector3i.UP:1,Vector3i.DOWN:6,Vector3i.LEFT:2,Vector3i.RIGHT:5,Vector3i.FORWARD:4,Vector3i.BACK:3}
 
 var target_rotation : Quaternion
+var target_color : Color
 var current_side_template : Node3D
 var current_side_index := 0
 
