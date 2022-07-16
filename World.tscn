@@ -1,13 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2wegejhto57i"]
+[gd_scene load_steps=4 format=3 uid="uid://b2wegejhto57i"]
 
 [ext_resource type="PackedScene" uid="uid://6fpaqq10x0o7" path="res://Cube.tscn" id="1_ekfan"]
 [ext_resource type="PackedScene" uid="uid://e3t7iglp0ytt" path="res://Sides/Grassland/Grassland.tscn" id="2_4tivh"]
+[ext_resource type="PackedScene" uid="uid://b4sg1efngiymx" path="res://Sides/Woods/Woods.tscn" id="3_do84m"]
 
 [node name="Node3D" type="Node3D"]
 
 [node name="Cube" parent="." instance=ExtResource("1_ekfan")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1, 0)
-sides = [ExtResource("2_4tivh")]
+sides = [ExtResource("2_4tivh"), ExtResource("3_do84m")]
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.927184, 0.374607, 0, -0.374607, 0.927184, 0, 0.5, 1.8)

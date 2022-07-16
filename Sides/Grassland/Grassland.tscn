@@ -1,49 +1,26 @@
-[gd_scene load_steps=10 format=3 uid="uid://e3t7iglp0ytt"]
+[gd_scene load_steps=5 format=3 uid="uid://e3t7iglp0ytt"]
 
 [ext_resource type="Script" path="res://Sides/DiceSide.gd" id="1_0v38q"]
 [ext_resource type="Texture2D" uid="uid://v5f3vkvybjb5" path="res://Sides/Grassland/Grass1.png" id="2_30203"]
 [ext_resource type="Texture2D" uid="uid://cwskp7oagbi1a" path="res://Sides/Grassland/Grass2.png" id="3_20m7e"]
 [ext_resource type="PackedScene" uid="uid://yhk1844cvdup" path="res://Player.tscn" id="4_4stil"]
 
-[sub_resource type="Gradient" id="Gradient_80a7o"]
-colors = PackedColorArray(0, 1, 0.160784, 1, 0.407843, 1, 0, 1)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_7kh1i"]
-metadata/_preview_in_3d_space_ = true
-
-[sub_resource type="NoiseTexture" id="NoiseTexture_x8h0d"]
-as_normal_map = true
-bump_strength = 0.9
-color_ramp = SubResource("Gradient_80a7o")
-noise = SubResource("FastNoiseLite_7kh1i")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7dl8b"]
-albedo_color = Color(0, 0.847059, 0, 1)
-albedo_texture = SubResource("NoiseTexture_x8h0d")
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_raaqn"]
-material = SubResource("StandardMaterial3D_7dl8b")
-size = Vector2(1.8, 1.8)
-
 [node name="Grassland" type="Node3D"]
 script = ExtResource("1_0v38q")
 normal_pip_path = NodePath("Grass")
 danger_pip_path = NodePath("Danger")
 danger_probibility = 0.1
-side_floor = NodePath("Floor")
-
-[node name="Floor" type="MeshInstance3D" parent="."]
-mesh = SubResource("PlaneMesh_raaqn")
+color = Color(0.145098, 1, 0.203922, 1)
 
 [node name="Grass" type="Sprite3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 offset = Vector2(0, 32)
-modulate = Color(0, 0.34902, 0, 1)
+modulate = Color(0.145098, 0.686275, 0.152941, 1)
 billboard = 2
 double_sided = false
 alpha_cut = 1
 texture_filter = 0
-texture = ExtResource("2_30203")
+texture = ExtResource("3_20m7e")
 
 [node name="Danger" type="Node3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
@@ -51,31 +28,31 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 [node name="DangerGrass2" type="Sprite3D" parent="Danger"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0, -0.4)
 offset = Vector2(0, 24)
-modulate = Color(0, 0.34902, 0, 1)
+modulate = Color(0.145098, 0.686275, 0.152941, 1)
 billboard = 2
 double_sided = false
 alpha_cut = 1
 texture_filter = 0
-texture = ExtResource("3_20m7e")
+texture = ExtResource("2_30203")
 
 [node name="DangerGrass4" type="Sprite3D" parent="Danger"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0, 0)
 offset = Vector2(0, 24)
-modulate = Color(0, 0.34902, 0, 1)
+modulate = Color(0.145098, 0.686275, 0.152941, 1)
 billboard = 2
 double_sided = false
 alpha_cut = 1
 texture_filter = 0
-texture = ExtResource("3_20m7e")
+texture = ExtResource("2_30203")
 
 [node name="DangerGrass3" type="Sprite3D" parent="Danger"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0, 0.4)
 offset = Vector2(0, 24)
-modulate = Color(0, 0.34902, 0, 1)
+modulate = Color(0.145098, 0.686275, 0.152941, 1)
 billboard = 2
 double_sided = false
 alpha_cut = 1
 texture_filter = 0
-texture = ExtResource("3_20m7e")
+texture = ExtResource("2_30203")
 
 [node name="Player" parent="Danger" instance=ExtResource("4_4stil")]
