@@ -5,16 +5,19 @@
 
 [node name="Player" type="Node3D"]
 rotation_edit_mode = 1
-top_level = true
 script = ExtResource("1_62dea")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 mesh = ExtResource("1_m6rya")
 
-[node name="MoveTimer" type="Timer" parent="."]
+[node name="MoveDiffrenceTimer" type="Timer" parent="."]
 wait_time = 0.1
 one_shot = true
 
+[node name="MoveDurrationTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="edge_reached" from="." to="." method="_on_player_edge_reached"]
-[connection signal="timeout" from="MoveTimer" to="." method="_on_move_timer_timeout"]
+[connection signal="timeout" from="MoveDiffrenceTimer" to="." method="_on_move_diffrence_timer_timeout"]
+[connection signal="timeout" from="MoveDurrationTimer" to="." method="_on_move_durration_timer_timeout"]
