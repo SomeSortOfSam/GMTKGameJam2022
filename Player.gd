@@ -21,8 +21,7 @@ func _unhandled_input(event):
 
 func _process(delta):
 	position = position.lerp(Vector3(current_cell.x,0,current_cell.y)*MOVE_DISTANCE,.1)
-	position.clamp(Vector3.ONE*2,Vector3.ONE.ceil())
-	rotation = Quaternion(rotation).slerp(Quaternion.IDENTITY,.1).get_euler()
+	quaternion = quaternion.slerp(Quaternion.IDENTITY,.1)
 
 func set_current_cell(new_cell : Vector2i):
 	current_cell = new_cell

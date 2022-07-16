@@ -1,9 +1,15 @@
 extends Node3D
 
+var target_rotation : Quaternion
+
 func _process(delta):
-	rotation = Quaternion(rotation).slerp(Quaternion.IDENTITY,.1).get_euler()
+	quaternion = quaternion.slerp(target_rotation,.1).normalized()
 
 func _on_player_edge_reached(direction):
-	var queued_rotation = -Vector2(direction)*(PI/2)
-	rotate(Vector3.FORWARD,queued_rotation.x)
-	rotate(Vector3.RIGHT,queued_rotation.y)
+	var old_rotaiton = quaternion
+	direction = direction * (PI/2)
+	global_rotate(Vector3.FORWARD,direction.x)
+	global_rotate(Vector3.RIGHT,direction.y)
+	target_rotation = quaternion
+	quaternion = old_rotaiton
+	
