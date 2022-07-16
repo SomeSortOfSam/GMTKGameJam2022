@@ -1,24 +1,20 @@
 [gd_scene load_steps=4 format=3 uid="uid://6fpaqq10x0o7"]
 
 [ext_resource type="ArrayMesh" uid="uid://btmx2ae08sul7" path="res://Dice.obj" id="1_wn2xo"]
+[ext_resource type="Script" path="res://Cube.gd" id="2_h6xo3"]
 [ext_resource type="PackedScene" uid="uid://yhk1844cvdup" path="res://Player.tscn" id="2_l63f2"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_iinj0"]
-size = Vector3(2, 2, 2)
-
 [node name="Cube" type="Node3D"]
+script = ExtResource("2_h6xo3")
 
 [node name="Cube" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1, 0)
 mesh = ExtResource("1_wn2xo")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Cube"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube/StaticBody3D"]
-shape = SubResource("BoxShape3D_iinj0")
-
 [node name="Player" parent="." instance=ExtResource("2_l63f2")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.8, 0.102294, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.5, 4.47035e-08, -0.866025, 0.612372, 0.707107, 0.353553, 0.612372, -0.707107, 0.353553, 0, 0, 0)
+
+[connection signal="edge_reached" from="Player" to="." method="_on_player_edge_reached"]
