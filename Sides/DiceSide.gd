@@ -48,7 +48,7 @@ func place_on_each_pip(pip_template : Node3D, danger_template : Node3D, number :
 		pip.position = (Vector3(pip_place.x,0,pip_place.y))*.6
 		add_child(pip)
 
-func on_cube_rotation_finished():
+func on_cube_rotation_finished(_unused):
 	if turns_lived > 1:
 		scale_target = Vector3.ZERO
 		death_timer.start() 

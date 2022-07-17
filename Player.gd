@@ -50,7 +50,7 @@ func _on_player_edge_reached(direction : Vector2i):
 	current_cell.y = sign(direction.y)*GRID_EXTENTS if direction.y != 0 else current_cell.y
 	position_lerp_enabled = false
 
-func _on_cube_rotation_finished():
+func _on_cube_rotation_finished(_unused):
 	position_lerp_enabled = true
 
 func _on_move_diffrence_timer_timeout():

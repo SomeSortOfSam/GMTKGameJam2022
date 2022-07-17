@@ -14,7 +14,7 @@ var current_side_template : DiceSide
 var current_side_index := -1
 var aculatted_number := 0
 
-signal rotation_finished
+signal rotation_finished(new_accumulated_number)
 
 func _ready():
 	prepare_current_side(Vector2.DOWN).turns_lived = 1
@@ -27,9 +27,9 @@ func get_current_side_number() -> int:
 	return NORMALS_TO_NUMBERS[Vector3i(basis.z.round())];
 
 func get_next_side() -> Node3D:
-	if (aculatted_number > 20 or not current_side_template) and len(sides) > current_side_index + 1:
+	if (aculatted_number >= 20 or not current_side_template) and len(sides) > current_side_index + 1:
 		current_side_index += 1
-		aculatted_number
+		aculatted_number = 0
 		current_side_template = sides[current_side_index].instantiate()
 		target_color = current_side_template.color
 	return current_side_template.duplicate()
@@ -58,4 +58,4 @@ func _on_player_edge_reached(direction : Vector2):
 	rotation_timer.start(time_to_rotate)
 
 func _on_rotation_timer_timeout():
-	emit_signal("rotation_finished")
+	emit_signal("rotation_finished",aculatted_number)
