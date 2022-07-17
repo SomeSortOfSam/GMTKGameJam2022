@@ -1,0 +1,101 @@
+[gd_scene load_steps=13 format=3 uid="uid://cbjcafb1wxnkf"]
+
+[ext_resource type="Script" path="res://Sides/DiceSide.gd" id="1_yfc4y"]
+[ext_resource type="Texture2D" uid="uid://d4jovsbr5u1vt" path="res://Sides/Lair/Pillar0.png" id="2_1t0xk"]
+[ext_resource type="Texture2D" uid="uid://cbpief7qv4un8" path="res://Sides/Lair/Head0.png" id="3_jnqkp"]
+[ext_resource type="Texture2D" uid="uid://dpbvynwghu3qn" path="res://Sides/Lair/Pillar1.png" id="4_3undq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmj2c"]
+atlas = ExtResource("3_jnqkp")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_07l0g"]
+atlas = ExtResource("3_jnqkp")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5iykp"]
+atlas = ExtResource("3_jnqkp")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a3ru0"]
+atlas = ExtResource("3_jnqkp")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5thd"]
+atlas = ExtResource("3_jnqkp")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cjv5w"]
+animations = [{
+"frames": [SubResource("AtlasTexture_tmj2c"), SubResource("AtlasTexture_07l0g"), SubResource("AtlasTexture_5iykp"), SubResource("AtlasTexture_a3ru0"), SubResource("AtlasTexture_x5thd")],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="Animation" id="Animation_yrgg4"]
+resource_name = "Bob"
+length = 2.0
+loop_mode = 1
+step = 0.0833333
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0.0833333, 1, 0, 1.2, 0, 1, 1, 0, 1.5, 0, 2.08333, 1, 0, 1.2, 0)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6r502"]
+_data = {
+"Bob": SubResource("Animation_yrgg4")
+}
+
+[node name="Lair" type="Node3D"]
+script = ExtResource("1_yfc4y")
+normal_pip_path = NodePath("Pip")
+danger_pip_path = NodePath("DangerPip")
+danger_probibility = 0.5
+color = Color(0.611765, 0.505882, 0.878431, 1)
+
+[node name="Pip" type="Node3D" parent="."]
+
+[node name="Pillar" type="Sprite3D" parent="Pip"]
+offset = Vector2(0, 56)
+billboard = 2
+double_sided = false
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("2_1t0xk")
+
+[node name="Head" type="AnimatedSprite3D" parent="Pip"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2713, 0)
+billboard = 2
+double_sided = false
+alpha_cut = 1
+texture_filter = 0
+render_priority = 1
+frames = SubResource("SpriteFrames_cjv5w")
+playing = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Pip"]
+autoplay = "Bob"
+libraries = {
+"": SubResource("AnimationLibrary_6r502")
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Pip/AnimationPlayer"]
+autoplay = "Bob"
+libraries = {
+"": SubResource("AnimationLibrary_6r502")
+}
+
+[node name="DangerPip" type="Node3D" parent="."]
+
+[node name="Sprite3D" type="Sprite3D" parent="DangerPip"]
+offset = Vector2(0, 56)
+billboard = 2
+double_sided = false
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("4_3undq")

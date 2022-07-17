@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://ola5v10krmva"]
+
+[ext_resource type="Script" path="res://Sides/DiceSide.gd" id="1_yf5ny"]
+[ext_resource type="Texture2D" uid="uid://desd1f4hcgt3p" path="res://Sides/Cave/Rock1.png" id="2_aoxmn"]
+[ext_resource type="Texture2D" uid="uid://clt0tedge3108" path="res://Sides/Cave/Rock2.png" id="3_6hrqu"]
+
+[node name="Cave" type="Node3D"]
+script = ExtResource("1_yf5ny")
+normal_pip_path = NodePath("Pip")
+danger_pip_path = NodePath("DangerPip")
+danger_probibility = 0.3
+color = Color(0.611765, 0.564706, 0.65098, 1)
+
+[node name="Pip" type="Node3D" parent="."]
+
+[node name="Sprite3D2" type="Sprite3D" parent="Pip"]
+offset = Vector2(0, 56)
+billboard = 2
+double_sided = false
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("2_aoxmn")
+
+[node name="DangerPip" type="Node3D" parent="."]
+
+[node name="Sprite3D3" type="Sprite3D" parent="DangerPip"]
+offset = Vector2(0, 56)
+billboard = 2
+double_sided = false
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("3_6hrqu")

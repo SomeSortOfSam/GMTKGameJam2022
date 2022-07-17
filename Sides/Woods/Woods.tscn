@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4sg1efngiymx"]
+[gd_scene load_steps=5 format=3 uid="uid://b4sg1efngiymx"]
 
 [ext_resource type="Script" path="res://Sides/DiceSide.gd" id="1_xnl7i"]
 [ext_resource type="Texture2D" uid="uid://1yofh62vhwbt" path="res://Sides/Woods/Tree0.png" id="2_j1cg2"]
 [ext_resource type="PackedScene" uid="uid://yhk1844cvdup" path="res://Player.tscn" id="3_rh8ne"]
+[ext_resource type="Texture2D" uid="uid://dgjp0771835nj" path="res://Sides/Woods/Tree1.png" id="4_ryjoa"]
 
 [node name="Woods" type="Node3D"]
 script = ExtResource("1_xnl7i")
@@ -24,3 +25,12 @@ texture = ExtResource("2_j1cg2")
 [node name="DangerPip" type="Node3D" parent="."]
 
 [node name="Player" parent="DangerPip" instance=ExtResource("3_rh8ne")]
+
+[node name="Sprite3D2" type="Sprite3D" parent="DangerPip"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+offset = Vector2(0, 32)
+billboard = 2
+double_sided = false
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("4_ryjoa")

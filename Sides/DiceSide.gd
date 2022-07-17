@@ -50,10 +50,13 @@ func place_on_each_pip(pip_template : Node3D, danger_template : Node3D, number :
 
 func on_cube_rotation_finished(_unused):
 	if turns_lived > 1:
-		scale_target = Vector3.ZERO
+		_on_pre_death()
 		death_timer.start() 
 	else:
 		turns_lived += 1
+
+func _on_pre_death():
+	scale_target = Vector3.ZERO
 
 func _on_death_timer_timeout():
 	queue_free()

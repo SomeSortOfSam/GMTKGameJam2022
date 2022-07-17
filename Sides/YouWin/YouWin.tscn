@@ -1,0 +1,49 @@
+[gd_scene load_steps=10 format=3 uid="uid://mgvpqxnqk4mr"]
+
+[ext_resource type="Script" path="res://Sides/YouWin/YouWin.gd" id="1_hfr1m"]
+[ext_resource type="Texture2D" uid="uid://c6qh4ykrf51sn" path="res://Sides/YouWin/Cake.png" id="2_lp3gj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yeyuc"]
+atlas = ExtResource("2_lp3gj")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xgof"]
+atlas = ExtResource("2_lp3gj")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5eino"]
+atlas = ExtResource("2_lp3gj")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_otey6"]
+atlas = ExtResource("2_lp3gj")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eitva"]
+atlas = ExtResource("2_lp3gj")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5fs40"]
+atlas = ExtResource("2_lp3gj")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3h2tl"]
+animations = [{
+"frames": [SubResource("AtlasTexture_yeyuc"), SubResource("AtlasTexture_0xgof"), SubResource("AtlasTexture_5eino"), SubResource("AtlasTexture_otey6"), SubResource("AtlasTexture_eitva"), SubResource("AtlasTexture_5fs40")],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_hfr1m")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+offset = Vector2(0, 56)
+billboard = 2
+double_sided = false
+alpha_cut = 1
+texture_filter = 0
+frames = SubResource("SpriteFrames_3h2tl")
+frame = 4
+playing = true
