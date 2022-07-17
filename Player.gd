@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 @onready var move_diffrence_timer : Timer = $MoveDiffrenceTimer
 @onready var move_durration_timer : Timer = $MoveDurrationTimer
+@onready var step_audio : AudioStreamPlayer = $AudioStreamPlayer
 
 const MOVE_DISTANCE = .2
 const GRID_EXTENTS := 4
@@ -9,6 +10,7 @@ const DIRECTION_MAP : Dictionary = {"ui_left" : Vector2i.LEFT,"ui_right" : Vecto
 
 @export var position_lerp_enabled := true
 @export var time_to_rotate := .2
+@export var step_sounds : Array[AudioStream]
 
 var last_direction := Vector2i(0,-1)
 var queued_move : Vector2i
@@ -63,6 +65,8 @@ func _on_move_diffrence_timer_timeout():
 	else:
 		global_rotate(Vector3.DOWN,.2)
 	queued_move = Vector2i.ZERO
+	step_audio.stream = step_sounds[randi() % len(step_sounds)]
+	step_audio.play()
 
 func _on_move_durration_timer_timeout():
 	emit_signal("edge_reached",-last_direction)

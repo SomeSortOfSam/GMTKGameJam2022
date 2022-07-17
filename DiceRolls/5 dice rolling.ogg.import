@@ -1,0 +1,16 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOGGVorbis"
+uid="uid://cpmb3124qydh4"
+path="res://.godot/imported/5 dice rolling.ogg-156149f32bd51570b679fe0adab4beb1.oggvorbisstr"
+
+[deps]
+
+source_file="res://DiceRolls/5 dice rolling.ogg"
+dest_files=["res://.godot/imported/5 dice rolling.ogg-156149f32bd51570b679fe0adab4beb1.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0

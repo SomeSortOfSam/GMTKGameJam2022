@@ -16,6 +16,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0.8)
 [node name="RotationTimer" type="Timer" parent="."]
 one_shot = true
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+autoplay = true
+
 [connection signal="rotation_finished" from="." to="Player" method="_on_cube_rotation_finished"]
 [connection signal="edge_reached" from="Player" to="." method="_on_player_edge_reached"]
 [connection signal="timeout" from="RotationTimer" to="." method="_on_rotation_timer_timeout"]

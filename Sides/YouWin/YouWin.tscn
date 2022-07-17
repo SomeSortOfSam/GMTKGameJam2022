@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://mgvpqxnqk4mr"]
+[gd_scene load_steps=11 format=3 uid="uid://mgvpqxnqk4mr"]
 
 [ext_resource type="Script" path="res://Sides/YouWin/YouWin.gd" id="1_hfr1m"]
+[ext_resource type="AudioStream" uid="uid://dcvwkn16yu124" path="res://Sides/YouWin/Victory.mp3" id="2_22ol8"]
 [ext_resource type="Texture2D" uid="uid://c6qh4ykrf51sn" path="res://Sides/YouWin/Cake.png" id="2_lp3gj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yeyuc"]
@@ -37,6 +38,7 @@ animations = [{
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_hfr1m")
+music = ExtResource("2_22ol8")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 offset = Vector2(0, 56)
@@ -45,5 +47,5 @@ double_sided = false
 alpha_cut = 1
 texture_filter = 0
 frames = SubResource("SpriteFrames_3h2tl")
-frame = 4
+frame = 2
 playing = true

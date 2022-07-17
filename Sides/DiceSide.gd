@@ -7,7 +7,7 @@ var death_timer : Timer
 @export var danger_pip_path : NodePath
 @export_range(0.0,1.0,0.01) var danger_probibility : float
 @export var color : Color
-@export var blocked_path : NodePath
+@export var music : AudioStream
 
 const PIP_DICTONARY := [[Vector2.ZERO],[Vector2.ONE,-Vector2.ONE],[Vector2.ONE,-Vector2.ONE,Vector2.ZERO],[Vector2.ONE,-Vector2.ONE,Vector2(-1,1),Vector2(1,-1)],[Vector2.ONE,-Vector2.ONE,Vector2(-1,1),Vector2(1,-1),Vector2.ZERO],[Vector2.ONE,-Vector2.ONE,Vector2(-1,1),Vector2(1,-1),Vector2.LEFT,Vector2.RIGHT]]
 

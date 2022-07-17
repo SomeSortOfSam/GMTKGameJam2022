@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://cbjcafb1wxnkf"]
+[gd_scene load_steps=15 format=3 uid="uid://cbjcafb1wxnkf"]
 
 [ext_resource type="Script" path="res://Sides/DiceSide.gd" id="1_yfc4y"]
 [ext_resource type="Texture2D" uid="uid://d4jovsbr5u1vt" path="res://Sides/Lair/Pillar0.png" id="2_1t0xk"]
+[ext_resource type="AudioStream" uid="uid://lxku8tvxll16" path="res://Sides/Lair/563765__florianreichelt__fire-auto-car-on-fire.mp3" id="2_mhpem"]
 [ext_resource type="Texture2D" uid="uid://cbpief7qv4un8" path="res://Sides/Lair/Head0.png" id="3_jnqkp"]
 [ext_resource type="Texture2D" uid="uid://dpbvynwghu3qn" path="res://Sides/Lair/Pillar1.png" id="4_3undq"]
 
@@ -60,6 +61,7 @@ normal_pip_path = NodePath("Pip")
 danger_pip_path = NodePath("DangerPip")
 danger_probibility = 0.5
 color = Color(0.611765, 0.505882, 0.878431, 1)
+music = ExtResource("2_mhpem")
 
 [node name="Pip" type="StaticBody3D" parent="."]
 

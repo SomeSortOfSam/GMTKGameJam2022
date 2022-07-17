@@ -1,0 +1,16 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bjpb28ulqch6i"
+path="res://.godot/imported/211082__originalmaja__greenfield-birds-suburban-sounds-in-the-background.mp3-7c23f8884a41106fd49defa6664ef6cd.mp3str"
+
+[deps]
+
+source_file="res://Sides/Grassland/211082__originalmaja__greenfield-birds-suburban-sounds-in-the-background.mp3"
+dest_files=["res://.godot/imported/211082__originalmaja__greenfield-birds-suburban-sounds-in-the-background.mp3-7c23f8884a41106fd49defa6664ef6cd.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0

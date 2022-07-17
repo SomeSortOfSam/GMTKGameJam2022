@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Sides/DiceSide.gd" id="1_0v38q"]
 [ext_resource type="Texture2D" uid="uid://v5f3vkvybjb5" path="res://Sides/Grassland/Grass1.png" id="2_30203"]
+[ext_resource type="AudioStream" uid="uid://bjpb28ulqch6i" path="res://Sides/Grassland/211082__originalmaja__greenfield-birds-suburban-sounds-in-the-background.mp3" id="2_xnm8c"]
 [ext_resource type="Texture2D" uid="uid://cwskp7oagbi1a" path="res://Sides/Grassland/Grass2.png" id="3_20m7e"]
-[ext_resource type="PackedScene" uid="uid://yhk1844cvdup" path="res://Player.tscn" id="4_4stil"]
 
 [node name="Grassland" type="Node3D"]
 script = ExtResource("1_0v38q")
@@ -11,6 +11,7 @@ normal_pip_path = NodePath("Grass")
 danger_pip_path = NodePath("Danger")
 danger_probibility = 0.1
 color = Color(0.145098, 1, 0.203922, 1)
+music = ExtResource("2_xnm8c")
 
 [node name="Grass" type="Sprite3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
@@ -54,5 +55,3 @@ double_sided = false
 alpha_cut = 1
 texture_filter = 0
 texture = ExtResource("2_30203")
-
-[node name="Player" parent="Danger" instance=ExtResource("4_4stil")]

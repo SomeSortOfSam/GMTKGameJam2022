@@ -2,6 +2,7 @@ extends Node3D
 
 @onready var rotation_timer : Timer = $RotationTimer
 @onready var material : StandardMaterial3D = $Cube.mesh.surface_get_material(0)
+@onready var music_audio : AudioStreamPlayer = $AudioStreamPlayer
 
 @export var time_to_rotate := .2
 @export var sides : Array[PackedScene]
@@ -35,6 +36,8 @@ func get_next_side() -> Node3D:
 		aculatted_number = 0
 		current_side_template = sides[current_side_index].instantiate()
 		target_color = current_side_template.color
+		music_audio.stream = current_side_template.music
+		music_audio.play()
 	return current_side_template.duplicate()
 
 func prepare_current_side(direction: Vector2) -> Node3D:

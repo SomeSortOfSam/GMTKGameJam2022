@@ -1,7 +1,43 @@
-[gd_scene load_steps=4 format=3 uid="uid://yhk1844cvdup"]
+[gd_scene load_steps=40 format=3 uid="uid://yhk1844cvdup"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_62dea"]
 [ext_resource type="ArrayMesh" uid="uid://btmx2ae08sul7" path="res://Dice.obj" id="1_m6rya"]
+[ext_resource type="AudioStream" uid="uid://c6bf74amo36ci" path="res://DiceRolls/Roll-01.wav" id="2_x2oxn"]
+[ext_resource type="AudioStream" uid="uid://bs6n4cotq5k8o" path="res://DiceRolls/Roll-02.wav" id="3_xcnk8"]
+[ext_resource type="AudioStream" uid="uid://df6eye6pvs3kx" path="res://DiceRolls/Roll-03.wav" id="4_kt4kw"]
+[ext_resource type="AudioStream" uid="uid://0wagxndbjbis" path="res://DiceRolls/Roll-04.wav" id="5_kirk1"]
+[ext_resource type="AudioStream" uid="uid://bgqy5dusjtxcx" path="res://DiceRolls/Roll-05.wav" id="6_mgqpk"]
+[ext_resource type="AudioStream" uid="uid://dnjykodkv2c48" path="res://DiceRolls/Roll-06.wav" id="7_6trm8"]
+[ext_resource type="AudioStream" uid="uid://dvgb21cbftrfn" path="res://DiceRolls/Roll-07.wav" id="8_c50j5"]
+[ext_resource type="AudioStream" uid="uid://dynrjkofs5wm0" path="res://DiceRolls/Roll-08.wav" id="9_lybhe"]
+[ext_resource type="AudioStream" uid="uid://is0giptqmwho" path="res://DiceRolls/Roll-09.wav" id="10_5tp2h"]
+[ext_resource type="AudioStream" uid="uid://d1yryfq7f3qrl" path="res://DiceRolls/Roll-10.wav" id="11_nhoyo"]
+[ext_resource type="AudioStream" uid="uid://mvpev0a815xe" path="res://DiceRolls/Roll-11.wav" id="12_2yalu"]
+[ext_resource type="AudioStream" uid="uid://d2046w7artmso" path="res://DiceRolls/Roll-12.wav" id="13_sei1s"]
+[ext_resource type="AudioStream" uid="uid://bj8wg6b8171es" path="res://DiceRolls/Roll-13.wav" id="14_u83sb"]
+[ext_resource type="AudioStream" uid="uid://dypce4hljg8ea" path="res://DiceRolls/Roll-14.wav" id="15_kq3s0"]
+[ext_resource type="AudioStream" uid="uid://dbv3ei5sqxqo7" path="res://DiceRolls/Roll-15.wav" id="16_orsep"]
+[ext_resource type="AudioStream" uid="uid://dt8ubn3nj5neh" path="res://DiceRolls/Roll-16.wav" id="17_qdxev"]
+[ext_resource type="AudioStream" uid="uid://dpjyra1t545si" path="res://DiceRolls/Roll-17.wav" id="18_giedu"]
+[ext_resource type="AudioStream" uid="uid://b500qfrju0qi1" path="res://DiceRolls/Roll-18.wav" id="19_dpcp6"]
+[ext_resource type="AudioStream" uid="uid://du8f5sxh6au3u" path="res://DiceRolls/Roll-19.wav" id="20_tx3n3"]
+[ext_resource type="AudioStream" uid="uid://b4gb24bm023h3" path="res://DiceRolls/Roll-20.wav" id="21_ksijw"]
+[ext_resource type="AudioStream" uid="uid://d5eq4gnpmhla" path="res://DiceRolls/Roll-21.wav" id="22_u6ole"]
+[ext_resource type="AudioStream" uid="uid://bsxsbtwyx8cb0" path="res://DiceRolls/Roll-22.wav" id="23_ofmdr"]
+[ext_resource type="AudioStream" uid="uid://qdrkvceviluk" path="res://DiceRolls/Roll-23.wav" id="24_3ldj0"]
+[ext_resource type="AudioStream" uid="uid://k8n84kuafaxs" path="res://DiceRolls/Roll-24.wav" id="25_nulim"]
+[ext_resource type="AudioStream" uid="uid://4gestpybi8r4" path="res://DiceRolls/Roll-25.wav" id="26_qq3yx"]
+[ext_resource type="AudioStream" uid="uid://did1mnkibof6e" path="res://DiceRolls/Roll-26.wav" id="27_fai68"]
+[ext_resource type="AudioStream" uid="uid://b1xf8hbs78bt0" path="res://DiceRolls/Roll-27.wav" id="28_84not"]
+[ext_resource type="AudioStream" uid="uid://b3bm8gkf3mwqp" path="res://DiceRolls/Roll-28.wav" id="29_2qxe2"]
+[ext_resource type="AudioStream" uid="uid://djn351erdaow" path="res://DiceRolls/Roll-29.wav" id="30_l5ti8"]
+[ext_resource type="AudioStream" uid="uid://bin1ell4ekxus" path="res://DiceRolls/Roll-30.wav" id="31_uihdq"]
+[ext_resource type="AudioStream" uid="uid://bnxdpqmjm2d7x" path="res://DiceRolls/Roll-31.wav" id="32_pojut"]
+[ext_resource type="AudioStream" uid="uid://b72tnilhbsy32" path="res://DiceRolls/Roll-32.wav" id="33_nk15c"]
+[ext_resource type="AudioStream" uid="uid://q4u3e5xlxpy7" path="res://DiceRolls/Roll-33.wav" id="34_o3msh"]
+[ext_resource type="AudioStream" uid="uid://c6v83ifyc507b" path="res://DiceRolls/Roll-34.wav" id="35_85v2g"]
+[ext_resource type="AudioStream" uid="uid://ftju03vimyf" path="res://DiceRolls/Roll-35.wav" id="36_qmv52"]
+[ext_resource type="AudioStream" uid="uid://cw7siag0kge7i" path="res://DiceRolls/Roll-36.wav" id="37_yrhyy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qhrj2"]
 size = Vector3(0.15, 0.15, 0.15)
@@ -10,6 +46,7 @@ size = Vector3(0.15, 0.15, 0.15)
 rotation_edit_mode = 1
 collision_layer = 0
 script = ExtResource("1_62dea")
+step_sounds = [ExtResource("2_x2oxn"), ExtResource("3_xcnk8"), ExtResource("4_kt4kw"), ExtResource("5_kirk1"), ExtResource("6_mgqpk"), ExtResource("7_6trm8"), ExtResource("8_c50j5"), ExtResource("9_lybhe"), ExtResource("10_5tp2h"), ExtResource("11_nhoyo"), ExtResource("12_2yalu"), ExtResource("13_sei1s"), ExtResource("14_u83sb"), ExtResource("15_kq3s0"), ExtResource("16_orsep"), ExtResource("17_qdxev"), ExtResource("18_giedu"), ExtResource("19_dpcp6"), ExtResource("20_tx3n3"), ExtResource("21_ksijw"), ExtResource("22_u6ole"), ExtResource("23_ofmdr"), ExtResource("24_3ldj0"), ExtResource("25_nulim"), ExtResource("26_qq3yx"), ExtResource("27_fai68"), ExtResource("28_84not"), ExtResource("29_2qxe2"), ExtResource("30_l5ti8"), ExtResource("31_uihdq"), ExtResource("32_pojut"), ExtResource("33_nk15c"), ExtResource("34_o3msh"), ExtResource("35_85v2g"), ExtResource("36_qmv52"), ExtResource("37_yrhyy")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
@@ -24,6 +61,9 @@ one_shot = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_qhrj2")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
 
 [connection signal="edge_reached" from="." to="." method="_on_player_edge_reached"]
 [connection signal="timeout" from="MoveDiffrenceTimer" to="." method="_on_move_diffrence_timer_timeout"]

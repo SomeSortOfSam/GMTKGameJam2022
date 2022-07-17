@@ -1,0 +1,16 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://lxku8tvxll16"
+path="res://.godot/imported/563765__florianreichelt__fire-auto-car-on-fire.mp3-feae1817824c75d89cbbe8a28f76368a.mp3str"
+
+[deps]
+
+source_file="res://Sides/Lair/563765__florianreichelt__fire-auto-car-on-fire.mp3"
+dest_files=["res://.godot/imported/563765__florianreichelt__fire-auto-car-on-fire.mp3-feae1817824c75d89cbbe8a28f76368a.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4sg1efngiymx"]
+[gd_scene load_steps=6 format=3 uid="uid://b4sg1efngiymx"]
 
 [ext_resource type="Script" path="res://Sides/DiceSide.gd" id="1_xnl7i"]
 [ext_resource type="Texture2D" uid="uid://1yofh62vhwbt" path="res://Sides/Woods/Tree0.png" id="2_j1cg2"]
+[ext_resource type="AudioStream" uid="uid://cuty5g4ssy77b" path="res://Sides/Woods/546361__antonio-lai__forest.wav" id="2_wk6ua"]
 [ext_resource type="Texture2D" uid="uid://dgjp0771835nj" path="res://Sides/Woods/Tree1.png" id="4_ryjoa"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cuwqx"]
@@ -13,6 +14,7 @@ normal_pip_path = NodePath("Pip")
 danger_pip_path = NodePath("DangerPip")
 danger_probibility = 0.2
 color = Color(0, 0.317647, 0.2, 1)
+music = ExtResource("2_wk6ua")
 
 [node name="Pip" type="StaticBody3D" parent="."]
 collision_mask = 0

@@ -1,0 +1,16 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOGGVorbis"
+uid="uid://bxkunn6tpcuk7"
+path="res://.godot/imported/553080__nox-sound__ambiance-atmosphere-cave-loop.ogg-9d5e4edb7e3a0a0569db8e54f12124a6.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sides/Cave/553080__nox-sound__ambiance-atmosphere-cave-loop.ogg"
+dest_files=["res://.godot/imported/553080__nox-sound__ambiance-atmosphere-cave-loop.ogg-9d5e4edb7e3a0a0569db8e54f12124a6.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0

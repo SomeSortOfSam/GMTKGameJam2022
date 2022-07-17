@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://ola5v10krmva"]
+[gd_scene load_steps=6 format=3 uid="uid://ola5v10krmva"]
 
 [ext_resource type="Script" path="res://Sides/DiceSide.gd" id="1_yf5ny"]
 [ext_resource type="Texture2D" uid="uid://desd1f4hcgt3p" path="res://Sides/Cave/Rock1.png" id="2_aoxmn"]
+[ext_resource type="AudioStream" uid="uid://bxkunn6tpcuk7" path="res://Sides/Cave/553080__nox-sound__ambiance-atmosphere-cave-loop.ogg" id="2_lh33p"]
 [ext_resource type="Texture2D" uid="uid://clt0tedge3108" path="res://Sides/Cave/Rock2.png" id="3_6hrqu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lixol"]
@@ -13,6 +14,7 @@ normal_pip_path = NodePath("Pip")
 danger_pip_path = NodePath("DangerPip")
 danger_probibility = 0.3
 color = Color(0.611765, 0.564706, 0.65098, 1)
+music = ExtResource("2_lh33p")
 
 [node name="Pip" type="StaticBody3D" parent="."]
 
