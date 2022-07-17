@@ -1,10 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://yhk1844cvdup"]
+[gd_scene load_steps=4 format=3 uid="uid://yhk1844cvdup"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_62dea"]
 [ext_resource type="ArrayMesh" uid="uid://btmx2ae08sul7" path="res://Dice.obj" id="1_m6rya"]
 
-[node name="Player" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_qhrj2"]
+size = Vector3(0.15, 0.15, 0.15)
+
+[node name="Player" type="CharacterBody3D"]
 rotation_edit_mode = 1
+collision_layer = 0
 script = ExtResource("1_62dea")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -17,6 +21,9 @@ one_shot = true
 
 [node name="MoveDurrationTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_qhrj2")
 
 [connection signal="edge_reached" from="." to="." method="_on_player_edge_reached"]
 [connection signal="timeout" from="MoveDiffrenceTimer" to="." method="_on_move_diffrence_timer_timeout"]

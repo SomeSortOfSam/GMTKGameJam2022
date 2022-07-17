@@ -1,4 +1,4 @@
-extends Node3D
+extends CharacterBody3D
 
 @onready var move_diffrence_timer : Timer = $MoveDiffrenceTimer
 @onready var move_durration_timer : Timer = $MoveDurrationTimer
@@ -37,7 +37,9 @@ func set_current_cell(new_cell : Vector2i) -> bool:
 		new_direction = sign(new_cell.x)*Vector2i.RIGHT
 	elif abs(new_cell.y) > GRID_EXTENTS:
 		new_direction = sign(new_cell.y)*Vector2i.DOWN
-	if new_direction != -last_direction:
+	var distance = (new_cell-current_cell)*.2
+	distance = Vector3(distance.x,0,distance.y)
+	if new_direction != -last_direction and not move_and_collide(distance,true):
 		current_cell = new_cell
 		if new_direction != Vector2i.ZERO:
 			last_direction = new_direction

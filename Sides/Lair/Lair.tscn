@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cbjcafb1wxnkf"]
+[gd_scene load_steps=14 format=3 uid="uid://cbjcafb1wxnkf"]
 
 [ext_resource type="Script" path="res://Sides/DiceSide.gd" id="1_yfc4y"]
 [ext_resource type="Texture2D" uid="uid://d4jovsbr5u1vt" path="res://Sides/Lair/Pillar0.png" id="2_1t0xk"]
@@ -51,6 +51,9 @@ _data = {
 "Bob": SubResource("Animation_yrgg4")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_4x8aq"]
+size = Vector3(0.4, 0.1, 0.4)
+
 [node name="Lair" type="Node3D"]
 script = ExtResource("1_yfc4y")
 normal_pip_path = NodePath("Pip")
@@ -58,7 +61,7 @@ danger_pip_path = NodePath("DangerPip")
 danger_probibility = 0.5
 color = Color(0.611765, 0.505882, 0.878431, 1)
 
-[node name="Pip" type="Node3D" parent="."]
+[node name="Pip" type="StaticBody3D" parent="."]
 
 [node name="Pillar" type="Sprite3D" parent="Pip"]
 offset = Vector2(0, 56)
@@ -76,6 +79,7 @@ alpha_cut = 1
 texture_filter = 0
 render_priority = 1
 frames = SubResource("SpriteFrames_cjv5w")
+frame = 4
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Pip"]
@@ -89,6 +93,9 @@ autoplay = "Bob"
 libraries = {
 "": SubResource("AnimationLibrary_6r502")
 }
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Pip"]
+shape = SubResource("BoxShape3D_4x8aq")
 
 [node name="DangerPip" type="Node3D" parent="."]
 
